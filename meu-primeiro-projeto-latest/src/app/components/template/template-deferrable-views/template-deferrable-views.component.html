@@ -1,0 +1,12 @@
+<h2>Deferrable Views</h2>
+
+@defer(on timer(5s)) {
+<h2>Components</h2>
+@placeholder {
+<p>Mostrar antes de carregar algo.</p>
+} @loading {
+<p>loading...</p>
+}@error {
+<p>Loading failed: </p>
+}
+}
