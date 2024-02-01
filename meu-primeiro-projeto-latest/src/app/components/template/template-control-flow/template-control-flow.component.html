@@ -1,0 +1,72 @@
+<h2>Control Flow</h2>
+<h3>IF</h3>
+
+@if (isTrue) {
+<p>João</p>
+<p>Maria</p>
+} @else {
+Não está correto
+}
+
+<ng-container *ngIf="isTrue">
+  <p>João</p>
+  <p>Maria</p>
+</ng-container>
+
+<h3>IF, FOR</h3>
+@if (loadingData$ | async; as data) {
+<ul>
+  @for (item of data; track item) {
+  <li>{{ item }}</li>
+  }
+</ul>
+} @else {
+<p>Carregando...</p>
+}
+
+<!-- @for (item of loadingData$ | async; track item) {
+  <li>{{ item }}</li>
+} -->
+<!-- 
+@for( item of itens; track item.name;
+  let i = $index;
+  let c = $count;
+  let f = $first;
+  let l = $last;
+  let e = $even;
+  let o = $odd;
+) {
+  <p>{{ item.name }}</p>
+  <p>index - {{ i }}</p>
+  <p>count - {{ c }}</p>
+  <p>first - {{ f }}</p>
+  <p>last - {{ l }}</p>
+  <p>even - {{ e }}</p>
+  <p>odd - {{ o }}</p>
+  <hr>
+}
+
+<input #name type="text">
+<button (click)="addNewName(name.value)">Add Name</button> -->
+
+<!-- <ul>
+  @for(item of itens; track item.name) {
+    <li>{{ item.name }}</li>
+  } @empty {
+    <li>Não contém valores</li>
+  }
+</ul> -->
+
+@switch (switchCondition) {
+  @case ('A') {
+    <p>Sim, sua letra é: A</p>
+  }
+
+  @case ('B') {
+    <p>Sim, sua letra é: B</p>
+  }
+
+  @default {
+    <p>Os dados não foram encontrados</p>
+  }
+}
